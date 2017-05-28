@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var SIZE = 5;
+        var numWidth = 200;
+        var numHeight = 160;
+        var xpos = Math.floor(Math.random()*numWidth);
+        var ypos = Math.floor(Math.random()*numHeight);
+        var pos = "[y='"+ypos+"'] [x='"+xpos+"']";
+
+        $(function(){
+            for(var i = 0; i < numHeight; i++){
+                var row = $("<tr y='"+i+"'></tr>");
+                $("table").append(row);
+                
+                for(var j = 0; j < numWidth;j++){
+                    var cell = $("<td x='"+j+"'></td>");
+                    row.append(cell);
+                }
+            }
+            setInterval(changeColour, 10);
+        });
+        
+        
+        function changeColour(){
+        $(pos).css("background-color", "blue");
+           
+            var p1 = (Math.floor(Math.random()*3-1));
+var p2 = (Math.floor(Math.random()*3-1));
+        xpos = xpos + p1;
+        ypos = ypos + p2 ; 
+          var k = "[y='"+ypos+"'] [x='"+xpos+"']"
+          var colour = "red";
+        var num = Math.floor(Math.random()*4);    
+          if(num === 0) {
+            colour = "blue"
+            }
+            else if (num === 1) {
+                colour = "red"
+            }
+            else if (num === 2) {
+                colour = "green"
+            }
+            else {
+                colour = "orange"
+            }
+          $(k).css("background-color", colour);
+            
+            
+
+    
+
+        };
+    </script>
+    <style>
+    td {
+    background-color:white;
+    width:5px;
+    height:5px;
+    }
+    </style>
+    <table>
+    </table>
+</html>
