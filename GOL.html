@@ -38,8 +38,7 @@
 var p2 = (Math.floor(Math.random()*3-1));
         xpos = xpos + p1;
         ypos = ypos + p2 ; 
-          var k = "[y='"+ypos+"'] [x='"+xpos+"']"
-          var colour = "red";
+         
         
           if(xpos === 199) {
            xpos === xpos - 1 
@@ -58,6 +57,9 @@ var p2 = (Math.floor(Math.random()*3-1));
           if(ypos === 0) {
            ypos === ypos + 1 
           }
+          
+           var k = "[y='"+ypos+"'] [x='"+xpos+"']"
+          var colour = "red";
           
           var num = Math.floor(Math.random()*4);    
           if(num === 0) {
