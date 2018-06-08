@@ -40,7 +40,16 @@ var p2 = (Math.floor(Math.random()*3-1));
         ypos = ypos + p2 ; 
           var k = "[y='"+ypos+"'] [x='"+xpos+"']"
           var colour = "red";
-        var num = Math.floor(Math.random()*4);    
+        
+          if(xpos === 199) {
+           xpos === xpos - 1 
+          }
+          
+          if(ypos === 159) {
+           ypos === ypos - 1 
+          }
+          
+          var num = Math.floor(Math.random()*4);    
           if(num === 0) {
             colour = "blue"
             }
