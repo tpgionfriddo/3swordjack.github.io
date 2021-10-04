@@ -7,41 +7,31 @@
 */
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
-
 // Reassign color vars to semantic color scheme
-$brand-primary:             #00b0eb;
-$brand-success:             #5cb85c;
-$brand-info:                #333;
-$brand-warning:             #f0ad4e;
-
-$brand-danger:              #d9534f;
-$brand-inverse:             #292b2c;
- 
-
+$brand-primary: #00b0eb;
+$brand-success: #5cb85c;
+$brand-info: #333;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+$brand-inverse: #292b2c;
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
- 
-$enable-rounded:            true !default;
-$enable-shadows:            false;
-$enable-gradients:          false;
-$enable-transitions:        true !default;
-$enable-hover-media-query:  false !default;
-$enable-grid-classes:       true !default;
-$enable-print-styles:       true !default;
-
+$enable-rounded: true !default;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
 // Variables
 //
 // Theme settings.
-
-
 $body-color: #454545;
 $body-color-inverse: invert($body-color) !default;
 $link-color: #00b0eb;
-
 $font-family-base: Lato;
 $headings-font-family: Lato;
-
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-size-h1: 2.5 * $font-size-base;
 $font-size-h2: 2 * $font-size-base;
@@ -49,18 +39,81 @@ $font-size-h3: 1.75 * $font-size-base;
 $font-size-h4: 1.5 * $font-size-base;
 $font-size-h5: 1.25 * $font-size-base;
 $font-size-h6: $font-size-base;
-
 $display1-size: 6 * $font-size-base;
 $display2-size: 5.5 * $font-size-base;
 $display3-size: 4.5 * $font-size-base;
 $display4-size: 3.5 * $font-size-base;
-
 $border-radius: 0px;
 $border-radius-lg: $border-radius * 1.2;
 $border-radius-sm: $border-radius * .8;
+html,
+body {
+    scroll-behavior: smooth;
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    flex-direction: column;
+}
 
-html,body {
-  scroll-behavior: smooth;
+h1,
+h2,
+p {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    height: 0.7em;
+}
 
-}$body-bg: white;
-@import 'bootstrap-4.0.0-alpha.6';
+h1 {
+    font-size: 10em;
+}
+
+p {
+    margin-bottom: 75%;
+}
+
+$dot-width: 0.2em;
+$dot-color: #ffffff;
+$speed: 5s;
+.typing {
+    display: inline;
+    position: relative;
+    span {
+        content: '';
+        animation: blink $speed infinite;
+        animation-fill-mode: both;
+        height: $dot-width;
+        width: $dot-width;
+        background: $dot-color;
+        position: absolute;
+        left: 0;
+        bottom: 0.2em;
+        border-radius: 50%;
+        margin-left: $dot-width * 1;
+        &:nth-child(2) {
+            animation-delay: 1s;
+            margin-left: $dot-width * 3;
+        }
+        &:nth-child(3) {
+            animation-delay: 2s;
+            margin-left: $dot-width * 5;
+        }
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
